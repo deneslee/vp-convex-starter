@@ -1,0 +1,39 @@
+{
+  "name": "vp-convex-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "vp fmt",
+    "check:fix": "vp check --fix",
+    "env:load": "varlock load --path apps/web",
+    "env:codegen": "varlock codegen --path apps/web",
+    "prepare": "vp config && vpr env:codegen",
+    "deps": "vpx taze@latest -Ilwr",
+    "intent": "vpx @tanstack/intent@latest",
+    "skills": "vpx skills@latest"
+  },
+  "devDependencies": {
+    "@convex-dev/eslint-plugin": "catalog:",
+    "@tanstack/eslint-plugin-query": "catalog:",
+    "@tanstack/eslint-plugin-router": "catalog:",
+    "fallow": "catalog:",
+    "oxc-config-mantine": "catalog:",
+    "stylelint": "catalog:",
+    "stylelint-config-standard": "catalog:",
+    "taze": "catalog:",
+    "typescript": "catalog:",
+    "varlock": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": "^24.11.0 || >=26.0.0"
+  },
+  "packageManager": "pnpm@12.21.0"
+}

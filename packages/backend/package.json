@@ -1,0 +1,29 @@
+{
+  "name": "@repo/backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./_generated/api": "./convex/_generated/api.js",
+    "./_generated/dataModel": "./convex/_generated/dataModel.d.ts"
+  },
+  "scripts": {
+    "dev": "convex dev"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "catalog:",
+    "@convex-dev/rag": "catalog:",
+    "@convex-dev/workpool": "catalog:",
+    "ai": "catalog:",
+    "convex": "catalog:",
+    "convex-helpers": "catalog:"
+  },
+  "devDependencies": {
+    "@edge-runtime/vm": "catalog:",
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "convex-test": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}

@@ -1,0 +1,58 @@
+.docGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--layout-grid-card-min), 1fr));
+  gap: var(--space-md);
+}
+
+.docCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: var(--border-width-thin) solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-panel);
+}
+
+.docHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.docTitleButton {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--accent-primary);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.docTitleButton:hover {
+  text-decoration: underline;
+}
+
+.docMeta {
+  color: var(--text-muted);
+}
+
+.docFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.createRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+
+.createInput {
+  flex: 1;
+}

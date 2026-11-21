@@ -1,0 +1,11 @@
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--layout-grid-card-min), 1fr));
+  gap: var(--space-sm);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}

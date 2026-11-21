@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Env & generated types
+.env
+.env.*
+!.env.schema
+!.env.example
+env.d.ts
+apps/web/env.d.ts
+
+# Generated code
+**/routeTree.gen.ts
+**/_generated
+
+# Testing & caches
+coverage
+.vitest/
+.stylelintcache
+.cache
+.fallow/
+*.tsbuildinfo
+
+# Build & framework outputs
+out/
+build
+dist
+.tanstack/
+
+# Vite+ hooks dispatcher
+.vite-hooks/_/
+
+# Reference snapshots
+_refs/
+
+# Debug & OS
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+*.pem

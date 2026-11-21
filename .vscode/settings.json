@@ -1,0 +1,55 @@
+{
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.tanstack/**/*": true,
+    "packages/backend/convex/_generated/**/*": true,
+    "apps/web/env.d.ts": true,
+    "pnpm-lock.yaml": true
+  },
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.tanstack/**/*": true,
+    "packages/backend/convex/_generated/**/*": true,
+    "apps/web/env.d.ts": true,
+    "pnpm-lock.yaml": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.tanstack/**/*": true,
+    "packages/backend/convex/_generated/**/*": true,
+    "apps/web/env.d.ts": true,
+    "pnpm-lock.yaml": true
+  },
+  "files.eol": "\n",
+  "prettier.enable": false,
+  "eslint.enable": false,
+  "biome.enabled": false,
+  "oxc.enable": true,
+  "oxc.disableNestedConfig": true,
+  "oxc.fmt.disableNestedConfig": true,
+  "oxc.fmt.configPath": "./vite.config.ts",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "npm.scriptRunner": "vp",
+  "js/ts.tsdk.path": "node_modules\\typescript"
+}

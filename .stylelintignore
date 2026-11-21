@@ -1,0 +1,5 @@
+dist
+_refs
+node_modules
+packages/backend/convex/_generated
+.agents

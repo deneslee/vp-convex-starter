@@ -1,0 +1,10 @@
+{
+  "name": "mantine",
+  "displayName": "Mantine",
+  "description": "Project-scoped Mantine UI documentation MCP server — search docs, list components and hooks, and inspect component props and APIs.",
+  "suggestedPrompts": [
+    "Search Mantine docs for form validation with Zod",
+    "List available Mantine components and hooks",
+    "Check the props and API for a Mantine component"
+  ]
+}

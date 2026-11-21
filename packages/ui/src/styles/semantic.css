@@ -1,0 +1,107 @@
+/* Semantic tokens (light + dark) and BlockNote CSS variable bridge. */
+:root {
+  /* Surfaces */
+  --surface-canvas: var(--token-gray-0);
+  --surface-panel: var(--token-white);
+  --surface-elevated: var(--token-white);
+  --surface-interactive: var(--token-gray-1);
+  --surface-interactive-hover: var(--token-gray-2);
+
+  /* Borders */
+  --border-subtle: var(--token-gray-2);
+  --border-default: var(--token-gray-3);
+  --border-strong: var(--token-gray-4);
+  --border-focus: var(--token-blue-6);
+  --border-width-thin: var(--token-border-1);
+  --border-width-thick: var(--token-border-2);
+
+  /* Text */
+  --text-primary: var(--token-gray-9);
+  --text-secondary: var(--token-gray-7);
+  --text-muted: var(--token-gray-6);
+  --text-inverse: var(--token-white);
+
+  /* Accent & status */
+  --accent-primary: var(--token-blue-6);
+  --accent-primary-hover: var(--token-blue-7);
+  --accent-subtle: var(--token-blue-soft-light);
+  --status-success: var(--token-green-6);
+  --status-success-subtle: var(--token-green-soft-light);
+  --status-warning: var(--token-amber-6);
+  --status-warning-subtle: var(--token-amber-soft-light);
+  --status-danger: var(--token-red-6);
+  --status-danger-subtle: var(--token-red-soft-light);
+
+  /* Spacing & radii */
+  --space-2xs: var(--token-space-1);
+  --space-xs: var(--token-space-2);
+  --space-sm: var(--token-space-3);
+  --space-md: var(--token-space-4);
+  --space-lg: var(--token-space-6);
+  --space-xl: var(--token-space-8);
+
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-pill: var(--token-radius-full);
+
+  /* Typography & layout */
+  --font-sans: var(--token-font-sans);
+  --font-mono: var(--token-font-mono);
+  --text-size-xs: var(--token-font-size-xs);
+  --text-size-sm: var(--token-font-size-sm);
+  --text-size-md: var(--token-font-size-md);
+  --text-size-lg: var(--token-font-size-lg);
+  --text-size-xl: var(--token-font-size-xl);
+  --layout-header-height: var(--token-header-height);
+  --layout-sidebar-width: var(--token-sidebar-width);
+  --layout-content-max-width: var(--token-content-max-width);
+  --layout-editor-min-height: var(--token-editor-min-height);
+  --layout-dropzone-min-height: var(--token-dropzone-min-height);
+  --layout-thumb-height: var(--token-thumb-height);
+  --layout-grid-card-min: var(--token-grid-card-min);
+  --motion-fast: var(--token-duration-fast);
+  --motion-normal: var(--token-duration-normal);
+
+  /* BlockNote semantic color mapping */
+  --bn-colors-editor-text: var(--text-primary);
+  --bn-colors-editor-background: var(--surface-panel);
+  --bn-colors-menu-text: var(--text-primary);
+  --bn-colors-menu-background: var(--surface-elevated);
+  --bn-colors-tooltip-text: var(--text-primary);
+  --bn-colors-tooltip-background: var(--surface-interactive);
+  --bn-colors-hovered-text: var(--text-primary);
+  --bn-colors-hovered-background: var(--surface-interactive-hover);
+  --bn-colors-selected-text: var(--text-inverse);
+  --bn-colors-selected-background: var(--accent-primary);
+  --bn-colors-disabled-text: var(--text-muted);
+  --bn-colors-disabled-background: var(--surface-interactive);
+  --bn-colors-border: var(--border-default);
+  --bn-colors-side-menu: var(--text-muted);
+  --bn-font-family: var(--font-sans);
+}
+
+[data-mantine-color-scheme='dark'] {
+  --surface-canvas: var(--token-dark-8);
+  --surface-panel: var(--token-dark-7);
+  --surface-elevated: var(--token-dark-6);
+  --surface-interactive: var(--token-dark-6);
+  --surface-interactive-hover: var(--token-dark-5);
+
+  --border-subtle: var(--token-dark-5);
+  --border-default: var(--token-dark-4);
+  --border-strong: var(--token-dark-3);
+  --border-focus: var(--token-blue-5);
+
+  --text-primary: var(--token-dark-0);
+  --text-secondary: var(--token-dark-1);
+  --text-muted: var(--token-dark-2);
+  --text-inverse: var(--token-white);
+
+  --accent-primary: var(--token-blue-5);
+  --accent-primary-hover: var(--token-blue-6);
+  --accent-subtle: var(--token-blue-soft-dark);
+  --status-success-subtle: var(--token-green-soft-dark);
+  --status-warning-subtle: var(--token-amber-soft-dark);
+  --status-danger-subtle: var(--token-red-soft-dark);
+}

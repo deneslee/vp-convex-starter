@@ -1,0 +1,116 @@
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+}
+
+.pageHeaderCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.pageTitle {
+  color: var(--text-primary);
+}
+
+.pageDescription {
+  color: var(--text-muted);
+}
+
+.surface {
+  background-color: var(--surface-panel);
+  border: var(--border-width-thin) solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.surfaceElevated {
+  background-color: var(--surface-elevated);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.surfaceCompact {
+  padding: var(--space-sm);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl);
+  border: var(--border-width-thin) dashed var(--border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-panel);
+}
+
+.emptyTitle {
+  color: var(--text-primary);
+}
+
+.emptyDescription {
+  color: var(--text-muted);
+}
+
+.statusBadge[data-status='active'],
+.statusBadge[data-status='indexed'] {
+  background-color: var(--status-success-subtle);
+  color: var(--status-success);
+}
+
+.statusBadge[data-status='pending'],
+.statusBadge[data-status='draft'] {
+  background-color: var(--status-warning-subtle);
+  color: var(--status-warning);
+}
+
+.statusBadge[data-status='failed'] {
+  background-color: var(--status-danger-subtle);
+  color: var(--status-danger);
+}
+
+.statusBadge[data-status='archived'] {
+  background-color: var(--surface-interactive);
+  color: var(--text-muted);
+}
+
+.semanticButton[data-intent='primary'] {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.semanticButton[data-intent='primary']:hover {
+  background-color: var(--accent-primary-hover);
+}
+
+.semanticButton[data-intent='secondary'] {
+  background-color: var(--surface-interactive);
+  color: var(--text-primary);
+  border: var(--border-width-thin) solid var(--border-default);
+}
+
+.semanticButton[data-intent='secondary']:hover {
+  background-color: var(--surface-interactive-hover);
+}
+
+.semanticButton[data-intent='danger'] {
+  background-color: var(--status-danger-subtle);
+  color: var(--status-danger);
+}
+
+.semanticButton[data-intent='subtle'] {
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+.semanticButton[data-intent='subtle']:hover {
+  background-color: var(--surface-interactive);
+}

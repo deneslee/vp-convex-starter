@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/fallow/schema.json",
+  "ignorePatterns": [
+    "**/routeTree.gen.ts",
+    "**/_generated/**",
+    "**/env.d.ts",
+    "_refs/**",
+    "tests/e2e/**",
+    ".agents/**",
+  ],
+  "ignoreDependencies": [
+    "@blocknote/core",
+    "@edge-runtime/vm",
+    "@tanstack/intent",
+    "embla-carousel",
+    "embla-carousel-react",
+    "taze",
+  ],
+  "ignoreBinaries": ["skills@latest", "taze@latest"],
+  "rules": {
+    "unused-files": "error",
+    "unused-exports": "warn",
+    "unresolved-imports": "error",
+  },
+  "duplicates": {
+    "minOccurrences": 3,
+    "mode": "mild",
+  },
+}

@@ -1,0 +1,35 @@
+# Workpool
+# Workpool organizes async operations into prioritized queues, ensuring critical tasks execute first in Convex applications.
+# Category: Durable Functions
+
+## Install
+- Command: npm install @convex-dev/workpool
+
+## Links
+- Directory: https://www.convex.dev/components/workpool
+- Markdown: https://www.convex.dev/components/workpool/workpool.md
+- llms.txt: https://www.convex.dev/components/workpool/llms.txt
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fworkpool
+- GitHub: https://github.com/convex/workpool
+
+## Details
+- Version: 0.5.0
+- Weekly downloads: 1,084,130
+- Author: convex
+
+## Description
+Workpool manages parallel execution of Convex actions and mutations by organizing them into separate, customizable queues with configurable parallelism limits. It provides built-in retry logic with backoff and jitter for idempotent operations, plus completion callbacks for building reliable workflows. This prevents resource contention between high-priority work (like emails) and background tasks (like data scraping) while avoiding overwhelming your backend during third-party outages.
+
+## Use Cases
+- **Prioritize critical async operations** - Separate email verification, payment processing, or notifications into high-priority pools while running data scraping or analytics in lower-priority queues
+- **Build reliable workflows with retries** - Handle payment processing, webhook delivery, or third-party API calls with automatic retry logic and backoff to avoid overwhelming systems during outages
+- **Reduce database write conflicts** - Serialize mutations that read and write the same data (like counters or inventory) by running them in a workpool with maxParallelism: 1
+- **Control resource usage** - Throttle background jobs to stay within function execution limits while ensuring live user traffic isn't blocked by batch operations
+- **Create durable multi-step processes** - Chain together actions using onComplete callbacks to build workflows that survive failures and track completion status reactively
+
+## How It Works
+You install the component via `app.use(workpool, { name: "myWorkpool" })` in convex.config.ts and create workpool instances with specific parallelism limits. Each workpool acts as a separate queue - for example, `emailPool` with 10 parallel slots and `scrapePool` with 5 slots to prevent scraping from blocking emails.
+
+Instead of calling `ctx.scheduler.runAfter()`, you enqueue work with `pool.enqueueAction(ctx, internal.myFunction, args)`. The workpool respects parallelism limits and provides retry configuration via `retryActionsByDefault` and `defaultRetryBehavior` with exponential backoff. Actions that fail while retrying don't consume parallelism slots during backoff periods.
+
+The `onComplete` callback system enables reliable workflows - you can chain operations, log results, or trigger follow-up actions regardless of success or failure. The component stores job status reactively in the database, letting you build UIs that show real-time progress. Status data is kept for a configurable TTL (default 1 day) and can be queried using `pool.status(workId)`.

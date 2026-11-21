@@ -1,0 +1,51 @@
+{
+  "name": "@repo/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "preview": "vp preview"
+  },
+  "dependencies": {
+    "@convex-dev/react-query": "catalog:",
+    "@mantine/core": "catalog:",
+    "@mantine/dropzone": "catalog:",
+    "@mantine/hooks": "catalog:",
+    "@mantine/lightbox": "catalog:",
+    "@mantine/notifications": "catalog:",
+    "@repo/backend": "workspace:*",
+    "@repo/domain": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@tanstack/convex-db-collection": "catalog:",
+    "@tanstack/db": "catalog:",
+    "@tanstack/react-db": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "@tanstack/react-router": "catalog:",
+    "convex": "catalog:",
+    "lucide-react": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "varlock": "catalog:",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@tanstack/devtools-vite": "catalog:",
+    "@tanstack/intent": "catalog:",
+    "@tanstack/react-devtools": "catalog:",
+    "@tanstack/react-query-devtools": "catalog:",
+    "@tanstack/react-router-devtools": "catalog:",
+    "@tanstack/router-plugin": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@varlock/vite-integration": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "cross-env": "catalog:",
+    "postcss": "catalog:",
+    "postcss-preset-mantine": "catalog:",
+    "postcss-simple-vars": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}
