@@ -17,6 +17,20 @@ This repository is in **restructure review mode**: its plan, docs and the `apps/
 - **One owner per fact.** Link to the owning doc instead of copying it ([docs/restructure/README.md](docs/restructure/README.md) lists the owners).
 - **Steps.** Run each step per [docs/restructure/workflow.md](docs/restructure/workflow.md): spec, approval, change, checks, review, approval to commit.
 
+## Agent skills
+
+### Issue tracker
+
+Use GitHub Issues in `deneslee/vp-convex-starter` for skill specs, tickets, and wayfinder maps. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the five default labels when a skill requests triage. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This repo uses a multi-context layout with a root glossary map and shared ADRs. See `docs/agents/domain.md`.
+
 ## 0. React and programming best practices
 - Always apply best practices: seperation of concern(Ui only does UI, business logic -> hook, data handling (consider provider pattern?) are seperate)
 
