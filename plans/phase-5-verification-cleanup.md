@@ -1,5 +1,7 @@
 # Phase 5 — Full Verification, Cache Proof, Browser Smoke Tests & Cleanup
 
+**Status:** Later
+
 > **Owned Paths:** Workspace-wide audit + `_refs/` removal.
 > **Depends On:** Phase 4.
 

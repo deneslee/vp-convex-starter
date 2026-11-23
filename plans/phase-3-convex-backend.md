@@ -1,5 +1,7 @@
 # Phase 3 — `packages/backend` (Convex 1.51 + RAG + Workpool + Typed Env)
 
+**Status:** Next
+
 > **Owned Paths:** `packages/backend/**`, `.agents/skills/**`.
 > **Depends On:** Phase 1, [packages-and-versions.md](packages-and-versions.md).
 > **Parallelism:** Can run in parallel with Phase 2A and Phase 2B after Gate 1 passes (only `packages/backend` imports `@repo/domain` if shared constants/parsers are needed, or keeps pure Convex validators self-contained).

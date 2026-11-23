@@ -90,6 +90,8 @@ flowchart LR
 
 ## Phase Index & Orchestration Table
 
+Phase 1 and Phase 2A are done. Phase 2B is in progress. The backend is next, followed by the web application and final verification. These statuses describe the planning trial scenario. The checkout already has UI, backend, and web implementation files, and the trial statuses do not establish which gates have passed.
+
 | Phase | Spec | Owned Paths | Depends On | Verification Gate |
 | :--- | :--- | :--- | :--- | :--- |
 | **Shared** | [plans/packages-and-versions.md](plans/packages-and-versions.md) | `pnpm-workspace.yaml` catalog | — | Exact npm versions & peer rules |
@@ -110,6 +112,10 @@ Use this prompt when assigning a single phase (or parallel wave) to a fresh agen
 ---
 
 ## Architecture & Upgrade Reference Docs
+
+- [Workspace glossary](GLOSSARY.md)
+- Architecture decisions: [Vite+ SPA](docs/adr/0001-pure-spa.md), [state ownership](docs/adr/0002-state-ownership.md), [native file storage](docs/adr/0003-native-file-storage.md), and [BlockNote with raw Markdown](docs/adr/0004-blocknote-markdown-editor.md)
+- [V2 roadmap](plans/v2-roadmap.md)
 
 - [docs/markdown-editor-options.md](docs/markdown-editor-options.md) — BlockNote v0.57 Mantine v9 setup, raw fallback, and `@convex-dev/prosemirror-sync` upgrade path
 - [docs/storage-and-auth-options.md](docs/storage-and-auth-options.md) — Native Convex storage vs R2/Files Control/ConvexFS, single-user middleware vs Better Auth / Convex Auth v2 / Clerk

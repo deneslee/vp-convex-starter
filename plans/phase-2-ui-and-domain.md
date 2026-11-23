@@ -8,6 +8,8 @@
 
 ## Phase 2A — `packages/domain` (`@repo/domain`)
 
+**Status:** Done
+
 1. **Dependencies:** `"zod": "catalog:"`; `"devDependencies": { "@repo/tsconfig": "workspace:*", "typescript": "catalog:" }`.
 2. **Zod v4 Schemas (`packages/domain/src/schemas/`):**
    - `RecordSchema`: `clientId`, `title`, `category`, `status` (`"draft" | "active" | "archived"`), `tags`, `attributes`, `updatedAt`.
@@ -25,6 +27,17 @@
 ---
 
 ## Phase 2B — `packages/ui` (`@repo/ui` — Mantine v9.8.2 + BlockNote 0.57)
+
+**Status:** In progress
+
+- [x] Dependency, PostCSS, and render-test setup
+- [x] Design tokens and Mantine theme
+- [ ] App frame and navigation
+- [ ] Record table and detail card
+- [ ] Asset dropzone and gallery
+- [ ] BlockNote workspace and raw Markdown mode
+- [ ] Search bar, mode toggle, and results
+- [ ] Render tests and Phase 2 verification
 
 ### Step 0 (Mandatory): Query `mantine-mcp` First
 Before writing any component, layout, or hook:

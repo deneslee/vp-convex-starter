@@ -1,5 +1,7 @@
 # Phase 1 — Monorepo Base, Vite+ 1.7 Caching, Stylelint, Fallow & Varlock
 
+**Status:** Done
+
 > **Owned Paths:** Root config files (`package.json`, `pnpm-workspace.yaml`, `vite.config.ts`, `.gitignore`, `.editorconfig`, `.gitattributes`, `.stylelintrc.json`, `.stylelintignore`, `.fallowrc.jsonc`), `.vite-hooks/`, `.vscode/`, `.agents/workflow.md`, `tools/tsconfig/`, `apps/web/.env.schema`, `apps/web/.env.example`.
 > **Depends On:** Phase 0 (`_refs/`), [packages-and-versions.md](packages-and-versions.md).
 
