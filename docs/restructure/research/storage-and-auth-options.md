@@ -1,5 +1,7 @@
 # Storage & Auth Options (v1 Defaults vs. Upgrade Paths)
 
+Last verified: not re-verified. Moved as-is from `docs/storage-and-auth-options.md` at commit `898e983`, 2026-11-21. External claims were not re-fetched; check versions before you use them.
+
 v1 starts with the **fastest zero-external-account options** while isolating both behind thin adapters in `packages/backend/convex/` so upgrades require minimal refactoring. Configure backend secrets via Convex's typed `defineApp({ env: { ... } })` in `packages/backend/convex/convex.config.ts` (reading `env` from `./_generated/server`), and client build vars in `apps/web/.env.schema` via `varlock`.
 
 ---

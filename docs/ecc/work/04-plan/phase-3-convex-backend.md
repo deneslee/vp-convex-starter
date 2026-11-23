@@ -1,7 +1,7 @@
 # Phase 3 — `packages/backend` (Convex 1.51 + RAG + Workpool + Typed Env)
 
 > **Owned Paths:** `packages/backend/**`, `.agents/skills/**`.
-> **Depends On:** Phase 1, [packages-and-versions.md](packages-and-versions.md).
+> **Depends On:** Phase 1, [packages-and-versions.md](../../../restructure/research/packages-and-versions.md).
 > **Parallelism:** Can run in parallel with Phase 2A and Phase 2B after Gate 1 passes (only `packages/backend` imports `@repo/domain` if shared constants/parsers are needed, or keeps pure Convex validators self-contained).
 
 ---
@@ -41,7 +41,7 @@
    - Declare typed environment variables via `defineApp({ env: { OPENAI_API_KEY: v.optional(v.string()), EMBEDDING_MODEL: v.optional(v.string()) } })` so functions import `env` from `../_generated/server` instead of reading `process.env`.
 2. **`packages/backend/convex/lib/functions.ts`:**
    - Wrap `query`, `mutation`, and `action` using `convex-helpers` (`customQuery`, `customMutation`, `customAction`) exporting `appQuery`, `appMutation`, `appAction`.
-   - Single-user pass-through for v1, acting as the single choke point for adding auth later (see [docs/storage-and-auth-options.md](../docs/storage-and-auth-options.md)).
+   - Single-user pass-through for v1, acting as the single choke point for adding auth later (see [docs/storage-and-auth-options.md](../../../restructure/research/storage-and-auth-options.md)).
 3. **`packages/backend/convex/lib/workpool.ts`:**
    - Instantiate `ragIndexPool = new Workpool(components.ragIndexPool, { maxParallelism: 5, retryActionsByDefault: true, defaultRetryBehavior: { maxAttempts: 3, initialBackoffMs: 1000, base: 2 } })` (safely under Convex free-tier limit of 20).
 4. **`packages/backend/convex/lib/rag.ts`:**

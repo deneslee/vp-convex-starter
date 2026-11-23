@@ -1,0 +1,287 @@
+# The starter's catalog: the fixed foundations, the core capabilities with the providers that can fill
+# them, the plugins (Convex components and libraries), and the patterns worth borrowing.
+#
+# Checked by schema.mjs. To regenerate the pages: node apps/docs/scripts/generate-catalog.mjs && vp fmt apps/docs
+#
+# Status words: fixed (built on, never swapped), built, decided, default (the pick unless a decision changes it),
+# option, proposed, later, open, reference. Steps P1–P8 are the phases in docs/restructure/phases.md.
+
+foundations:
+  - id: frontend
+    area: Frontend
+    choice: React 19 with TypeScript 7, strict
+  - id: tooling
+    area: Build and tooling
+    choice: Vite+ (Vite, Vitest, Oxlint, Oxfmt, Vite Task); pnpm workspaces
+    notes: Stylelint bans raw colours and units in module CSS; fallow finds dead code; varlock checks env
+  - id: app-shape
+    area: App shape
+    choice: A pure SPA; no SSR, no server routes
+  - id: backend
+    area: Backend
+    choice: Convex
+    notes: The only backend; every function goes through the app wrappers
+  - id: routing
+    area: Routing
+    choice: TanStack Router, file-based
+  - id: server-state
+    area: Server state
+    choice: TanStack DB for lists, TanStack Query for details and search
+  - id: client-state
+    area: Client state
+    choice: Zustand, UI state only
+  - id: validation
+    area: Validation
+    choice: Zod 4
+    notes: Domain schemas live in packages/domain
+  - id: ui
+    area: UI system
+    choice: Mantine 9, CSS Modules, semantic design tokens
+    notes: Mantine components first, checked through the Mantine MCP
+capabilities:
+  - id: records
+    name: Records
+    tier: core
+    group: Data
+    status: decided
+    step: P3, P4
+    must:
+      - Optimistic create and edit
+      - Lists bounded with .take(n)
+    default: A Convex table synced into a TanStack DB collection
+    notes: Structured rows with title, category, status, tags and attributes
+  - id: documents
+    name: Markdown documents
+    tier: core
+    group: Data
+    status: decided
+    step: P3, P4
+    must:
+      - Markdown is the stored format
+      - Lists load summaries only, never the body
+    default: A Convex table; large bodies in Convex storage
+    options:
+      - Import from .md files with frontmatter
+  - id: assets
+    name: Assets
+    tier: core
+    group: Data
+    status: decided
+    step: P3, P4
+    must:
+      - Three-step upload
+      - Delete removes the stored file
+    default: Native Convex storage
+    options:
+      - Cloudflare R2
+      - Files Control
+      - ConvexFS
+  - id: live-updates
+    name: Live updates
+    tier: core
+    group: Data
+    status: built
+    step: P3
+    must:
+      - A change in one tab shows in every open tab
+    default: Convex subscriptions
+  - id: keyword-search
+    name: Keyword search
+    tier: core
+    group: Search
+    status: decided
+    step: P3
+    default: Convex search indexes on records and documents
+  - id: semantic-search
+    name: Semantic search
+    tier: core
+    group: Search
+    status: decided
+    step: P3
+    must:
+      - Indexing runs in the background and reports its status
+    default: The Convex RAG component, fed by a Workpool
+  - id: editor
+    name: Markdown editor
+    tier: core
+    group: Editing
+    status: decided
+    step: P2B
+    must:
+      - A raw Markdown mode
+    default: BlockNote 0.57 with Mantine
+    options:
+      - Mantine Tiptap
+  - id: theme
+    name: Theme and tokens
+    tier: core
+    group: Editing
+    status: built
+    step: P2B
+    default: One Mantine theme; primitive and semantic CSS variables
+  - id: sign-in
+    name: Sign-in
+    tier: core
+    group: Platform
+    status: default
+    step: P7
+    must:
+      - Identity is checked once, in the Convex wrappers
+    default: Better Auth
+    options:
+      - Convex Auth v2
+      - Clerk
+    notes: v1 has one user and no sign-in
+  - id: collab-editing
+    name: Collaborative editing
+    tier: potential
+    group: Editing
+    status: proposed
+    adds: Two people edit one document at the same time
+    candidates:
+      - prosemirror-sync with BlockNote
+      - prosemirror-sync with Tiptap
+  - id: presence
+    name: Presence
+    tier: potential
+    group: Collaboration
+    status: later
+    adds: Who else has a document open
+    candidates:
+      - The Convex presence component
+  - id: assistant
+    name: Assistant
+    tier: potential
+    group: AI
+    status: later
+    adds: Chat threads over the user's documents
+    candidates:
+      - The Convex agent component with RAG
+  - id: counts
+    name: Counts and pagination at scale
+    tier: potential
+    group: Data
+    status: later
+    adds: Counts, sums and offset pages without full scans
+    candidates:
+      - The Convex aggregate component
+plugins:
+  - id: convex-rag
+    name: '@convex-dev/rag'
+    tier: core
+    group: Convex components
+    status: decided
+    step: P3
+    provides:
+      - semantic-search
+    runs: Convex
+  - id: convex-workpool
+    name: '@convex-dev/workpool'
+    tier: core
+    group: Convex components
+    status: decided
+    step: P3
+    provides:
+      - semantic-search
+    adds:
+      - A queue for indexing jobs
+    runs: Convex
+  - id: convex-helpers
+    name: convex-helpers
+    tier: core
+    group: Libraries
+    status: built
+    step: P3
+    provides:
+      - sign-in
+    adds:
+      - The app wrappers for queries, mutations and actions
+    runs: Convex
+  - id: r2
+    name: '@convex-dev/r2'
+    tier: potential
+    group: Storage
+    status: option
+    provides:
+      - assets
+    adds:
+      - Zero-egress CDN URLs
+    notes: Deferred (D-08)
+  - id: better-auth
+    name: '@convex-dev/better-auth'
+    tier: potential
+    group: Auth
+    status: proposed
+    provides:
+      - sign-in
+    notes: D-01, recommended by research
+  - id: convex-auth
+    name: '@convex-dev/auth'
+    tier: potential
+    group: Auth
+    status: option
+    provides:
+      - sign-in
+    notes: D-01
+  - id: clerk
+    name: Clerk
+    tier: potential
+    group: Auth
+    status: option
+    provides:
+      - sign-in
+    notes: D-01; managed, free up to 10k monthly users
+  - id: prosemirror-sync
+    name: '@convex-dev/prosemirror-sync'
+    tier: potential
+    group: Collaboration
+    status: proposed
+    provides:
+      - collab-editing
+    notes: D-07
+  - id: convex-presence
+    name: '@convex-dev/presence'
+    tier: potential
+    group: Collaboration
+    status: later
+    provides:
+      - presence
+  - id: convex-agent
+    name: '@convex-dev/agent'
+    tier: potential
+    group: AI
+    status: later
+    provides:
+      - assistant
+  - id: convex-aggregate
+    name: '@convex-dev/aggregate'
+    tier: potential
+    group: Data
+    status: later
+    provides:
+      - counts
+patterns:
+  - id: cove-layout
+    name: Vite+ monorepo layout
+    source: cove-monorepo
+    use: Workspace layout, shared tsconfig, hooks, fallow and varlock
+    status: reference
+    url: https://github.com/mugnavo/cove-monorepo
+  - id: mantine-template
+    name: Mantine Vite+ set-up
+    source: mantinedev/vite-template
+    use: PostCSS, Stylelint and test utilities for Mantine
+    status: reference
+    url: https://github.com/mantinedev/vite-template
+  - id: trellaux
+    name: Convex with TanStack Query
+    source: TanStack Router examples
+    use: convexQuery, suspense queries and route-loader warming
+    status: reference
+    url: https://github.com/TanStack/router/tree/main/examples/react/start-convex-trellaux
+  - id: collab-editor
+    name: Collaborative editor
+    source: Convex examples
+    use: Wiring prosemirror-sync with BlockNote
+    status: reference
+    url: https://www.convex.dev/examples/collaborative-editor

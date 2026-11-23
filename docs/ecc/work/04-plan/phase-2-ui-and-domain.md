@@ -1,7 +1,7 @@
 # Phase 2 — `packages/domain` & `packages/ui` (Mantine v9 + BlockNote 0.57)
 
 > **Owned Paths:** `packages/domain/**`, `packages/ui/**`, `apps/web/postcss.config.mjs`.
-> **Depends On:** Phase 1, [packages-and-versions.md](packages-and-versions.md).
+> **Depends On:** Phase 1, [packages-and-versions.md](../../../restructure/research/packages-and-versions.md).
 > **Parallelism:** Phase 2A (`packages/domain`), Phase 2B (`packages/ui`), and [Phase 3](phase-3-convex-backend.md) can run concurrently once Gate 1 passes.
 
 ---

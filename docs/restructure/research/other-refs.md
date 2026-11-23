@@ -1,5 +1,7 @@
 # External Reference Repos & Official Docs
 
+Last verified: not re-verified. Moved as-is from `docs/other-refs.md` at commit `898e983`, 2026-11-21. External claims were not re-fetched; check versions before you use them.
+
 | Resource | Link | What to Borrow From It |
 | :--- | :--- | :--- |
 | **Cove Monorepo (Vite+ Base)** | [github.com/mugnavo/cove-monorepo](https://github.com/mugnavo/cove-monorepo) | `pnpm` workspace + Vite+ `1.7` layout, `catalog:`, `tools/tsconfig/`, `.vite-hooks/`, `fallow`, `varlock`, and `.agents/` structure. |

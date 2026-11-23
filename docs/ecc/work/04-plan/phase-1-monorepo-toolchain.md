@@ -1,7 +1,7 @@
 # Phase 1 — Monorepo Base, Vite+ 1.7 Caching, Stylelint, Fallow & Varlock
 
 > **Owned Paths:** Root config files (`package.json`, `pnpm-workspace.yaml`, `vite.config.ts`, `.gitignore`, `.editorconfig`, `.gitattributes`, `.stylelintrc.json`, `.stylelintignore`, `.fallowrc.jsonc`), `.vite-hooks/`, `.vscode/`, `.agents/workflow.md`, `tools/tsconfig/`, `apps/web/.env.schema`, `apps/web/.env.example`.
-> **Depends On:** Phase 0 (`_refs/`), [packages-and-versions.md](packages-and-versions.md).
+> **Depends On:** Phase 0 (`_refs/`), [packages-and-versions.md](../../../restructure/research/packages-and-versions.md).
 
 ---
 
@@ -17,7 +17,7 @@
 
 ## 2. Workspace Catalog (`pnpm-workspace.yaml`) & Root `package.json`
 
-1. Write `pnpm-workspace.yaml` using the exact verified `catalog:` and `overrides: { "vite@*": "catalog:" }` from [packages-and-versions.md](packages-and-versions.md). Do **not** add any `vitest` override or `minimumReleaseAge`.
+1. Write `pnpm-workspace.yaml` using the exact verified `catalog:` and `overrides: { "vite@*": "catalog:" }` from [packages-and-versions.md](../../../restructure/research/packages-and-versions.md). Do **not** add any `vitest` override or `minimumReleaseAge`.
 2. Create root `package.json`:
    - `"packageManager": "pnpm@12.21.0"`
    - `"engines": { "node": "^24.11.0 || >=26.0.0" }`

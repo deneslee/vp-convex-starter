@@ -1,5 +1,7 @@
 # Packages & Verified Versions (Single Source of Truth)
 
+Last verified: not re-verified. Moved as-is from `plans/packages-and-versions.md` at commit `898e983`, 2026-11-21. External claims were not re-fetched; check versions before you use them.
+
 All versions below were verified against npm (`latest` as of 2026-11-20). Use `catalog:` in workspace `package.json` files and keep exact versions centralized in `pnpm-workspace.yaml`.
 
 ---

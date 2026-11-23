@@ -1,5 +1,7 @@
 # Markdown Editor Options (v1 BlockNote Default vs. Upgrade & Alternative Paths)
 
+Last verified: not re-verified. Moved as-is from `docs/markdown-editor-options.md` at commit `898e983`, 2026-11-21. External claims were not re-fetched; check versions before you use them.
+
 The editor is isolated behind a single presentational boundary in `packages/ui/src/primitives/MarkdownWorkspace` accepting `{ markdown, onChangeMarkdown, onUploadImage, mode, onModeChange, readOnly }` so switching or upgrading editors never affects `apps/web` routes, TanStack DB collections, or Convex RAG indexing.
 
 ---

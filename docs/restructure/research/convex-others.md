@@ -1,5 +1,7 @@
 # Optional Convex Components Roadmap (Beyond v1)
 
+Last verified: not re-verified. Moved as-is from `docs/convex-others.md` at commit `898e983`, 2026-11-21. External claims were not re-fetched; check versions before you use them.
+
 In v1, `packages/backend` mounts **`@convex-dev/rag`** (semantic search) and **`@convex-dev/workpool`** (`ragIndexPool` background indexing), alongside `convex-helpers` (`customQuery`/`customMutation`/`customAction`) and native Convex Storage / full-text `searchIndex`.
 
 When adding new capabilities later, mount self-contained Convex Components in `packages/backend/convex/convex.config.ts` rather than hand-rolling infrastructure tables:

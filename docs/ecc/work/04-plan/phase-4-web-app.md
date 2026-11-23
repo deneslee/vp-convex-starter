@@ -1,7 +1,7 @@
 # Phase 4 — `apps/web` (Pure Vite+ SPA + TanStack Router/Query/DB + BlockNote + Zustand)
 
 > **Owned Paths:** `apps/web/**`.
-> **Depends On:** Phase 2 (`@repo/domain`, `@repo/ui`, `apps/web/postcss.config.mjs`), Phase 3 (`@repo/backend`), [packages-and-versions.md](packages-and-versions.md).
+> **Depends On:** Phase 2 (`@repo/domain`, `@repo/ui`, `apps/web/postcss.config.mjs`), Phase 3 (`@repo/backend`), [packages-and-versions.md](../../../restructure/research/packages-and-versions.md).
 
 ---
 

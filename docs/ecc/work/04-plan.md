@@ -92,12 +92,12 @@ flowchart LR
 
 | Phase | Spec | Owned Paths | Depends On | Verification Gate |
 | :--- | :--- | :--- | :--- | :--- |
-| **Shared** | [plans/packages-and-versions.md](plans/packages-and-versions.md) | `pnpm-workspace.yaml` catalog | — | Exact npm versions & peer rules |
-| **Phase 1** | [plans/phase-1-monorepo-toolchain.md](plans/phase-1-monorepo-toolchain.md) | Root configs, `tools/tsconfig/`, `.vite-hooks/`, `.agents/workflow.md`, `apps/web/.env.schema` | Phase 0 | `vp install`, `vpr env:codegen`, `vpr check` (x2 cache hit), `vpr stylelint`, `vpr fallow` |
-| **Phase 2** | [plans/phase-2-ui-and-domain.md](plans/phase-2-ui-and-domain.md) | `packages/domain/**`, `packages/ui/**`, `apps/web/postcss.config.mjs` | Phase 1 *(2A, 2B & Phase 3 can run in parallel)* | Boundary grep, `vpr check`, `vpr stylelint`, `vpr test` |
-| **Phase 3** | [plans/phase-3-convex-backend.md](plans/phase-3-convex-backend.md) | `packages/backend/**`, `.agents/skills/**` | Phase 1 *(parallel with Phase 2)* | `vpr convex:typecheck`, `vpr check`, `vpr test` |
-| **Phase 4** | [plans/phase-4-web-app.md](plans/phase-4-web-app.md) | `apps/web/**` | Phases 2 & 3 | `vpr check`, `vpr stylelint`, `vpr test`, `vpr build`, `vpr fallow`, `vpr env:audit` |
-| **Phase 5** | [plans/phase-5-verification-cleanup.md](plans/phase-5-verification-cleanup.md) | Full repo audit + `_refs/` removal | Phase 4 | Full pipeline x2 cache proof + 2-tab smoke test + `_refs/` removed |
+| **Shared** | [plans/packages-and-versions.md](../../restructure/research/packages-and-versions.md) | `pnpm-workspace.yaml` catalog | — | Exact npm versions & peer rules |
+| **Phase 1** | [plans/phase-1-monorepo-toolchain.md](04-plan/phase-1-monorepo-toolchain.md) | Root configs, `tools/tsconfig/`, `.vite-hooks/`, `.agents/workflow.md`, `apps/web/.env.schema` | Phase 0 | `vp install`, `vpr env:codegen`, `vpr check` (x2 cache hit), `vpr stylelint`, `vpr fallow` |
+| **Phase 2** | [plans/phase-2-ui-and-domain.md](04-plan/phase-2-ui-and-domain.md) | `packages/domain/**`, `packages/ui/**`, `apps/web/postcss.config.mjs` | Phase 1 *(2A, 2B & Phase 3 can run in parallel)* | Boundary grep, `vpr check`, `vpr stylelint`, `vpr test` |
+| **Phase 3** | [plans/phase-3-convex-backend.md](04-plan/phase-3-convex-backend.md) | `packages/backend/**`, `.agents/skills/**` | Phase 1 *(parallel with Phase 2)* | `vpr convex:typecheck`, `vpr check`, `vpr test` |
+| **Phase 4** | [plans/phase-4-web-app.md](04-plan/phase-4-web-app.md) | `apps/web/**` | Phases 2 & 3 | `vpr check`, `vpr stylelint`, `vpr test`, `vpr build`, `vpr fallow`, `vpr env:audit` |
+| **Phase 5** | [plans/phase-5-verification-cleanup.md](04-plan/phase-5-verification-cleanup.md) | Full repo audit + `_refs/` removal | Phase 4 | Full pipeline x2 cache proof + 2-tab smoke test + `_refs/` removed |
 
 ---
 
@@ -111,7 +111,7 @@ Use this prompt when assigning a single phase (or parallel wave) to a fresh agen
 
 ## Architecture & Upgrade Reference Docs
 
-- [docs/markdown-editor-options.md](docs/markdown-editor-options.md) — BlockNote v0.57 Mantine v9 setup, raw fallback, and `@convex-dev/prosemirror-sync` upgrade path
-- [docs/storage-and-auth-options.md](docs/storage-and-auth-options.md) — Native Convex storage vs R2/Files Control/ConvexFS, single-user middleware vs Better Auth / Convex Auth v2 / Clerk
-- [docs/convex-others.md](docs/convex-others.md) — Optional Convex Components roadmap beyond v1 (`rag` & `workpool`)
-- [docs/other-refs.md](docs/other-refs.md) — Curated external reference templates and official Markdown docs
+- [docs/markdown-editor-options.md](../../restructure/research/markdown-editor-options.md) — BlockNote v0.57 Mantine v9 setup, raw fallback, and `@convex-dev/prosemirror-sync` upgrade path
+- [docs/storage-and-auth-options.md](../../restructure/research/storage-and-auth-options.md) — Native Convex storage vs R2/Files Control/ConvexFS, single-user middleware vs Better Auth / Convex Auth v2 / Clerk
+- [docs/convex-others.md](../../restructure/research/convex-others.md) — Optional Convex Components roadmap beyond v1 (`rag` & `workpool`)
+- [docs/other-refs.md](../../restructure/research/other-refs.md) — Curated external reference templates and official Markdown docs
