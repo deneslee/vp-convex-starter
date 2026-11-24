@@ -1,11 +1,11 @@
 ---
 pipeline: gsd-path/v2
 project: vp-convex-starter-gsd-showcase
-milestone: null     # set by define; names the archive directory at ship
+milestone: app-frame-and-record-table
 phase: roadmap
                     # inspect only for brownfield; greenfield starts at define
                     # roadmap only in program flow (CHARTER.md exists)
-status: active
+status: done
 branch: gsd-path/M001
                     # the router rebinds before any next-milestone file change
                     # the bound branch is never main; ship integrates it there
@@ -35,3 +35,4 @@ it on completion. If this file and the artifacts disagree, the artifacts win
 - 2026-11-23 — decide — decision synthesis started
 - 2026-11-24 — decide — validated .project/SYNTHESIS.md
 - 2026-11-24 — roadmap — roadmap started
+- 2026-11-24 — roadmap — program roadmap approved

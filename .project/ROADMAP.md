@@ -16,7 +16,7 @@ The simulation starts at P2B-3. It treats the toolchain, domain, UI tokens and t
 Goal: Close the simulated P2B-3 review with evidence that the shared shell and record views work with representative records within the UI package boundary.
 Depends on: []
 Surfaces: UI component review
-Status: pending
+Status: active
 Archive: null
 Integrated: null
 
